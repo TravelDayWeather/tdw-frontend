@@ -1,4 +1,5 @@
 <template>
+  <img alt="Vue logo" src="../assets/tdw logo.png">
     <div>
       <h3 class="login-email-input login-input">email</h3>
       <input type="text" placeholder="Enter Email" class="login-input-field" required>
@@ -9,19 +10,20 @@
       <button class="login-button" @click="handleLogin">로그인</button>
     </div>
     <div>
-      <button class="signup-button" @click="handleLogin">회원가입</button>
+      <button class="signup-button" @click="goToSignUp">회원가입</button>
     </div>
     
   </template>
   
-  <script>
-  import '@/assets/css/Login.css';
+<script>
+import '@/assets/css/Login.css';
 
-  export default {
-    name: 'LoginComponent',
-    props: {
-      msg: String
+export default {
+  name: 'LoginPage',
+  methods: {
+    goToSignUp() {
+      this.$router.push('/signup'); // 회원가입 페이지로 이동
     }
   }
-  </script>
-  
+}
+</script>

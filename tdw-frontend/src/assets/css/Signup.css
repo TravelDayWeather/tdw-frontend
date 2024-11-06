@@ -1,0 +1,56 @@
+.logo-style {
+    position: absolute; 
+    top: 20px; 
+    left: 20px;
+    width: 500px;
+}
+
+.signup-input {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.signup-email-input {
+    margin-top: 150px;
+    margin-left: -310px;
+}
+
+.signup-pw-input {
+    margin-left: -280px;
+}
+
+.signup-name-input {
+    margin-left: -320px;
+}
+
+.signup-nickname-input {
+    margin-left: -300px;
+}
+
+.signup-phone-input {
+    margin-left: -320px;
+}
+
+.signup-input-field {
+    width: 100%;
+    max-width: 400px; /* max width to make it responsive */
+    padding: 12px; /* added padding for better spacing */
+    font-size: 14px; /* increased font size */
+    border-radius: 20px; /* rounded corners */
+    border: 5px solid #B7E792;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.signup-button {
+    width: 100%;
+    max-width: 400px; /* max width to make it responsive */
+    padding: 12px; /* added padding for better spacing */
+    font-size: 20px; /* increased font size */
+    border-radius: 20px; /* rounded corners */
+    border: 5px solid #B7E792;
+    background-color : #B7E792;
+    color: white;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
