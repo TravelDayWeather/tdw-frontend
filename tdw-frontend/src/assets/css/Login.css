@@ -1,0 +1,52 @@
+.login-input {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.login-email-input {
+    margin-top: 100px;
+    margin-left: -310px;
+}
+
+.login-pw-input {
+    margin-left: -280px;
+}
+
+.login-input-field {
+    width: 100%;
+    max-width: 400px; /* max width to make it responsive */
+    padding: 12px; /* added padding for better spacing */
+    font-size: 14px; /* increased font size */
+    border-radius: 20px; /* rounded corners */
+    border: 5px solid #B7E792;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.login-button {
+    width: 100%;
+    max-width: 400px; /* max width to make it responsive */
+    padding: 12px; /* added padding for better spacing */
+    font-size: 20px; /* increased font size */
+    border-radius: 20px; /* rounded corners */
+    border: 5px solid #B7E792;
+    background-color : #B7E792;
+    color: white;
+    margin-top: 150px;
+    box-sizing: border-box;
+}
+
+.signup-button {
+    width: 100%;
+    max-width: 400px; /* max width to make it responsive */
+    padding: 12px; /* added padding for better spacing */
+    font-size: 20px; /* increased font size */
+    border-radius: 20px; /* rounded corners */
+    border: 5px solid #B7E792;
+    background-color : #B7E792;
+    color: white;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+
