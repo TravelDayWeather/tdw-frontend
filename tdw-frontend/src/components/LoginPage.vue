@@ -43,7 +43,13 @@ export default {
       }).catch((error) => {
         console.log(this.loginRequest);
         console.log(error);
-        alert('로그인에 실패했습니다. 다시 시도해주세요.');
+        if (error.response.status == 404) {
+          alert('잘못된 이메일입니다. 다시 시도해주세요.');
+        } else if (error.response.status == 401) {
+          alert('비밀번호가 틀렸습니다. 다시 시도해주세요.');
+        } else {
+          alert('로그인에 실패했습니다. 다시 시도해주세요.');
+        }
       })
     }
   }
