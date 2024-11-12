@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="../assets/tdw logo.png">
+  <img alt="Vue logo" src="../assets/img/tdw logo.png">
     <div>
       <h3 class="login-email-input login-input">email</h3>
       <input type="text" placeholder="Enter Email" class="login-input-field" required>

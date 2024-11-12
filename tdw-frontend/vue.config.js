@@ -5,8 +5,9 @@ module.exports = defineConfig({
   outputDir: "/Users/jangseonho/tdw-backend/src/main/resources/static",
 
   devServer: {
+    port: 3000,
     proxy: {
-      "api/": {
+      "/api/": {
         target: "http://localhost:8080",
         changeOrigin: true,
       }
