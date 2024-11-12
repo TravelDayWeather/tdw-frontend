@@ -66,7 +66,7 @@
     box-sizing: border-box;
 }
 
-.duplicate-chk-button {
+.validate-chk-button {
     width: 100%;
     max-width: 110px;
     padding: 8px; 
@@ -77,4 +77,9 @@
     color: white;
     margin-left:10px;
     box-sizing: border-box;
+}
+
+.validate-chk-button.success {
+    background-color: #d0e3c1;
+    border: 5px solid #d0e3c1;
 }
