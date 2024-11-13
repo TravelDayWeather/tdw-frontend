@@ -30,7 +30,7 @@ export default {
     },
   methods: {
     goToSignUp() {
-      this.$router.push('/signup'); // 회원가입 페이지로 이동
+      this.$router.push('/signup');
     },
     async handleLogin() {
       await axios.post(`api/login`, this.loginRequest, {
@@ -40,6 +40,7 @@ export default {
       }).then((res) => {
         console.log(res.data);
         alert('로그인에 성공했습니다.');
+        this.$router.push({ name: 'Home' });
       }).catch((error) => {
         console.log(this.loginRequest);
         console.log(error);
