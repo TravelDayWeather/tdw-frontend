@@ -1,15 +1,15 @@
 <template>
     <div>
-        <ViewHeader></ViewHeader>
+        <HomeViewHeader></HomeViewHeader>
     </div>
 </template>
 
 <script>
-import ViewHeader from './Header/ViewHeader.vue';
+import HomeViewHeader from './Header/HomeViewHeader.vue';
 
 export default {
     components: {
-        ViewHeader
+        HomeViewHeader
     }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="../assets/img/tdw logo.png">
+  <ViewHeader></ViewHeader>
     <div>
       <h3 class="login-email-input login-input">email</h3>
       <input type="text" v-model="loginRequest.email" placeholder="Enter Email" class="login-input-field" required>
@@ -16,10 +16,14 @@
   </template>
   
 <script>
+import ViewHeader from './Header/ViewHeader.vue';
 import '@/assets/css/Login.css';
 import axios from 'axios';
 
 export default {
+  components: {
+    ViewHeader
+  },
   data() {
       return {
         loginRequest: {
@@ -40,6 +44,7 @@ export default {
       }).then((res) => {
         console.log(res.data);
         alert('로그인에 성공했습니다.');
+        this.$router.go(1);
         this.$router.push({ name: 'Home' });
       }).catch((error) => {
         console.log(this.loginRequest);

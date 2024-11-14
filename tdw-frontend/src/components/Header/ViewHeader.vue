@@ -1,15 +1,7 @@
 <template>
     <header>
         <div>
-            <img alt="Vue logo" src="../../assets/img/tdw logo.png" class="logo-resize">
+            <img alt="Vue logo" src="../../assets/img/TdwLogo.png">
         </div>
     </header>
 </template>
-<script>
-import "../../assets/css/Header.css"
-
-export default{
-    
-}
-
-</script>

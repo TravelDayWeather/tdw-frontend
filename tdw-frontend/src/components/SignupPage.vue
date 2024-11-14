@@ -1,5 +1,5 @@
 <template>
-    <img alt="tdw logo" class="logo-style" src="../assets/img/tdw logo.png">
+    <ViewHeader></ViewHeader>
     <div>
       <h3 class="signup-email-input signup-input">email</h3>
       <input type="text" v-model="signUpRequest.email"  placeholder="Enter Email" class="signup-duplicate-input-field" required>
@@ -21,10 +21,14 @@
   </template>
   
   <script>
+  import ViewHeader from './Header/ViewHeader.vue';
   import '@/assets/css/Signup.css';
   import axios from 'axios';
 
   export default {
+    components: {
+      ViewHeader
+    },
     data() {
       return {
         signUpRequest: {
