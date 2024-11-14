@@ -12,7 +12,7 @@
     max-width: 500px;
 }
 
-.mypage-icon-resize {
+.icon-resize {
     width: 100%;
     max-width: 40px;
     height: auto;
@@ -20,8 +20,15 @@
 
 .icon-location {
     position: absolute;
-    right: 3%;
     top: 22px; 
+}
+
+.mypage-icon-location {
+    right: 6%;
+}
+
+.search-icon-location {
+    right: 3%;
 }
 
 .divider-line {

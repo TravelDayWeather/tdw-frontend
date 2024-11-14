@@ -2,7 +2,8 @@
     <header>
         <div class="image-container">
             <img alt="Vue logo" src="../../assets/img/TdwLogo.png" class="logo-resize">
-            <img alt="mypage icon" src="../../assets/img/mypageIcon.png" class="mypage-icon-resize icon-location">
+            <img alt="search icon" src="../../assets/img/searchIcon.png" class="icon-resize search-icon-location icon-location">
+            <img alt="mypage icon" src="../../assets/img/mypageIcon.png" class="icon-resize mypage-icon-location icon-location">
         </div>
         <div class="divider-line"></div>
     </header>
