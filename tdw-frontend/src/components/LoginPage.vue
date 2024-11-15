@@ -38,14 +38,16 @@ export default {
     },
     async handleLogin() {
       await axios.post(`api/login`, this.loginRequest, {
-        header: {
-          "Context-Type": "multipart/form-data"
+        headers: {
+          "Context-Type": "application/json"
         }
       }).then((res) => {
         console.log(res.data);
         alert('로그인에 성공했습니다.');
         this.$router.go(1);
         this.$router.push({ name: 'Home' });
+        this.$cookies.set('userId', res.data.userId);
+        this.$cookies.set('token', res.data.accessToken);
       }).catch((error) => {
         console.log(this.loginRequest);
         console.log(error);
