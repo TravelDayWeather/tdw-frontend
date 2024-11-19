@@ -1,0 +1,18 @@
+.mypage-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* 왼쪽 메뉴 스타일 */
+.menu-wrapper {
+    flex: 1 1 25%;
+
+}
+
+/* 오른쪽 콘텐츠 스타일 */
+.content-wrapper {
+    flex: 1 1 75%;
+    /* flex-grow, flex-shrink, flex-basis */
+    padding: 20px;
+}

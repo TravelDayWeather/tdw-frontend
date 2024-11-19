@@ -1,32 +1,27 @@
 <template>
     <HomeViewHeader></HomeViewHeader>
-    <div>
-      <h1>My Page</h1>
-      <p>User ID: {{ routeUserId }}</p>
-      <p>UserData: {{ parsedUserData }}</p>
-    </div>
-  </template>
-  
-  <script>
-  import HomeViewHeader from './Header/HomeViewHeader.vue';
+    <div class="mypage-container">
+    <!-- 왼쪽 메뉴 -->
+        <div class="menu-wrapper">
+            <MyPageMenu />
+        </div>
 
-  export default {
-    components: {
-        HomeViewHeader
-    },
-      name: 'MyPage',
-      computed: {
-          routeUserId() {
-            return this.$route.params.userId;
-          },
-          parsedUserData() {
-            try {
-                return JSON.parse(this.$route.query.userData);
-            } catch (e) {
-                console.error('Error parsing userData:', e);
-                return null;
-            }
-          }
+    <!-- 오른쪽 콘텐츠 -->
+        <div class="content-wrapper">
+            <router-view />
+        </div>
+    </div>
+</template>
+
+<script> 
+import HomeViewHeader from './Header/HomeViewHeader.vue';
+import MyPageMenu from './MyPageMenu.vue';
+import '@/assets/css/mypage.css';
+
+    export default {
+        components: {
+            MyPageMenu,
+            HomeViewHeader
         }
-  };
-  </script>
+    }
+</script>

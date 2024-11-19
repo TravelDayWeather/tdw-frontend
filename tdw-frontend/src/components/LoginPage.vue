@@ -2,22 +2,23 @@
   <ViewHeader></ViewHeader>
     <div>
       <h3 class="login-email-input login-input">email</h3>
-      <input type="text" v-model="loginRequest.email" placeholder="Enter Email" class="login-input-field" required>
+      <input type="text" v-model="loginRequest.email" placeholder="Enter Email" class="login-input-field input-field" required>
       <h3 class="login-pw-input login-input">password</h3>
-      <input type="password" v-model="loginRequest.pw" placeholder="Enter Password" class="login-input-field" required>
+      <input type="password" v-model="loginRequest.pw" placeholder="Enter Password" class="login-input-field input-field" required>
     </div>
     <div>
-      <button class="login-button" @click="handleLogin">로그인</button>
+      <button class="login-button common-button" @click="handleLogin">로그인</button>
     </div>
     <div>
-      <button class="signup-button" @click="goToSignUp">회원가입</button>
+      <button class="signup-button common-button" @click="goToSignUp">회원가입</button>
     </div>
     
   </template>
   
 <script>
 import ViewHeader from './Header/ViewHeader.vue';
-import '@/assets/css/Login.css';
+import '@/assets/css/login.css';
+import '@/assets/css/common.css';
 import axios from 'axios';
 
 export default {

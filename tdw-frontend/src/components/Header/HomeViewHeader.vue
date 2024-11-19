@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="image-container">
-            <img alt="Vue logo" src="../../assets/img/TdwLogo.png" @click="goToHome" class="logo-resize">
+            <img alt="Vue logo" src="../../assets/img/tdwLogo.png" @click="goToHome" class="logo-resize">
             <img alt="search icon" src="../../assets/img/searchIcon.png" @click="goToSearch" class="icon-resize search-icon-location icon-location">
             <img alt="mypage icon" src="../../assets/img/mypageIcon.png" @click="goToMyPage" class="icon-resize mypage-icon-location icon-location">
         </div>
@@ -9,7 +9,7 @@
     </header>
 </template>
 <script>
-import "../../assets/css/HomeViewHeader.css"
+import "../../assets/css/home-header.css"
 import axios from "axios";
 
 export default{
@@ -31,19 +31,20 @@ export default{
                 }
             }).then((res) => {
                 console.log(res.data);
+
+                sessionStorage.setItem('userData', JSON.stringify({
+                    userId: res.data.userId,
+                    name: res.data.name,
+                    email: res.data.email,
+                    nickname: res.data.nickname,
+                    phone: res.data.phone,
+                    pw: res.data.pw
+                }));
+
                 this.$router.push({name: 'MyPage', 
                 params: {
                     userId: res.data.userId,            
                 },
-                query: {
-                    userData: JSON.stringify({
-                        name: res.data.name,
-                        email: res.data.email,
-                        nickname: res.data.nickname, // 'nikcname' -> 'nickname' 수정
-                        phone: res.data.phone,
-                        pw: res.data.pw
-                    })
-                }
             });
             }).catch((error) => {
                 console.log(error);
