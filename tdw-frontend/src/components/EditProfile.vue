@@ -37,7 +37,6 @@ export default {
                 phone: phone
             };
 
-            console.log("token: " + token);
             await axios.patch(
                 `/api/users/${userId}`,
                 userUpdateRequest,

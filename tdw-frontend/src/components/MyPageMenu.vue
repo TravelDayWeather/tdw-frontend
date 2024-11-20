@@ -13,7 +13,7 @@
           :key="subIndex" 
           class="submenu-item"
           :class="{ active: activeMenu === sub.label }"
-          @click="navigateTo(sub.route, sub.label)"
+          @click="handleMenuClick(sub.route, sub.label)"
         >
           {{ sub.label }}
         </p>
@@ -25,6 +25,7 @@
   <script>
   import '@/assets/css/common.css';
   import '@/assets/css/mypage-menu.css';
+  import axios from 'axios';
 
   export default {
   data() {
@@ -63,9 +64,28 @@
     '$route': 'setActiveMenuFromRoute',
   },
   methods: {
-    navigateTo(routeName, menuLabel) {
-      this.activeMenu = menuLabel;
-      this.$router.push({ name: routeName });
+    async handleMenuClick(routeName, menuLabel) {
+
+      if (routeName === 'Logout') {
+        console.log(routeName);
+          const token = this.$cookies.get('token');
+          console.log("token: ", token)
+          await axios.post('/api/logout', {}, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          alert('성공적으로 로그아웃되었습니다.');
+          sessionStorage.clear();
+          this.$cookies.remove('token');
+          this.$cookies.remove('userId');
+          this.$router.push({ name: 'Login' });
+        
+      } else {
+        // 일반적인 메뉴 라우팅 처리
+        this.activeMenu = menuLabel;
+        this.$router.push({ name: routeName });
+      }
     },
     setActiveMenuFromRoute() {
       const currentRoute = this.$route.name;
