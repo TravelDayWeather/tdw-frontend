@@ -89,7 +89,7 @@
         } else {
           await axios.post(`/api/signup`, this.signUpRequest, {
             header: {
-              "Context-Type": "multipart/form-data"
+              "Context-Type": "application/json"
             }
           }).then((res) => {
             console.log(this.signUpRequest);

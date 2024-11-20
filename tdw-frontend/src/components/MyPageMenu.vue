@@ -27,13 +27,12 @@
   import '@/assets/css/mypage-menu.css';
 
   export default {
-    data() {
-      return {
-        userData: JSON.parse(sessionStorage.getItem('userData')),
-
-        activeIndex: null, // 현재 열려 있는 상위 메뉴 인덱스
-        activeMenu: null,
-        menuItems: [
+  data() {
+    return {
+      userData: JSON.parse(sessionStorage.getItem('userData')),
+      activeIndex: null,
+      activeMenu: null,
+      menuItems: [
         {
           title: "내 정보",
           submenu: [
@@ -55,19 +54,29 @@
           ],
         },
       ],
-      };
+    };
+  },
+  mounted() {
+    this.setActiveMenuFromRoute();
+  },
+  watch: {
+    '$route': 'setActiveMenuFromRoute',
+  },
+  methods: {
+    navigateTo(routeName, menuLabel) {
+      this.activeMenu = menuLabel;
+      this.$router.push({ name: routeName });
     },
-      methods: {
-        navigateTo(routeName, menuLabel) {
-          this.activeMenu = menuLabel;
-          this.$router.push({ name: routeName });
-        },
-      },
-      name: 'MyPage',
-      computed: {
-          routeUserId() {
-            return this.$route.params.userId;
-          },
-        }
-  };
+    setActiveMenuFromRoute() {
+      const currentRoute = this.$route.name;
+      this.menuItems.forEach(menu => {
+        menu.submenu.forEach(sub => {
+          if (sub.route === currentRoute) {
+            this.activeMenu = sub.label;
+          }
+        });
+      });
+    },
+  },
+};
   </script>

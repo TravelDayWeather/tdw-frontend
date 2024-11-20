@@ -32,7 +32,7 @@ const routes = [
         component: MyPage,
         children: [
             {
-                path: '/editProfile',
+                path: 'editProfile',
                 name: 'EditProfile',
                 component: EditProfile,
             },
