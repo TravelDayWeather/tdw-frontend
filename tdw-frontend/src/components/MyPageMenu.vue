@@ -30,7 +30,7 @@
   export default {
   data() {
     return {
-      userData: JSON.parse(sessionStorage.getItem('userData')),
+      userData: JSON.parse(localStorage.getItem('userData')),
       activeIndex: null,
       activeMenu: null,
       menuItems: [
@@ -68,19 +68,16 @@
 
       if (routeName === 'Logout') {
         console.log(routeName);
-          const token = this.$cookies.get('token');
-          console.log("token: ", token)
+          const token = localStorage.getItem('accessToken');
+
           await axios.post('/api/logout', {}, {
             headers: {
               Authorization: `Bearer ${token}`
             }
           });
           alert('성공적으로 로그아웃되었습니다.');
-          sessionStorage.clear();
-          this.$cookies.remove('token');
-          this.$cookies.remove('userId');
+          localStorage.clear();
           this.$router.push({ name: 'Login' });
-        
       } else {
         // 일반적인 메뉴 라우팅 처리
         this.activeMenu = menuLabel;

@@ -21,8 +21,8 @@ export default{
             
         },
         goToMyPage() {
-            const userId =this.$cookies.get('userId');
-            const token = this.$cookies.get('token');
+            const userId =localStorage.getItem('userId');
+            const token = localStorage.getItem('accessToken');
             console.log(userId);
             console.log(`Bearer ${token}`)
             axios.get(`/api/users/${userId}`, {
@@ -32,7 +32,7 @@ export default{
             }).then((res) => {
                 console.log(res.data);
 
-                sessionStorage.setItem('userData', JSON.stringify({
+                localStorage.setItem('userData', JSON.stringify({
                     userId: res.data.userId,
                     name: res.data.name,
                     email: res.data.email,

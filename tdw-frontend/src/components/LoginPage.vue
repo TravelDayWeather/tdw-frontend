@@ -47,8 +47,10 @@ export default {
         alert('로그인에 성공했습니다.');
         this.$router.go(1);
         this.$router.push({ name: 'Home' });
-        this.$cookies.set('userId', res.data.userId);
-        this.$cookies.set('token', res.data.accessToken);
+        
+        localStorage.setItem('userId', res.data.userId);
+        localStorage.setItem('accessToken', res.data.accessToken);
+        localStorage.setItem('refreshToken', res.data.refreshToken);
       }).catch((error) => {
         console.log(this.loginRequest);
         console.log(error);

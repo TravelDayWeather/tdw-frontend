@@ -28,8 +28,8 @@ export default {
     },
     methods:{
         async updateUser() {
-            const userId =this.$cookies.get('userId');
-            const token = this.$cookies.get('token');
+            const userId =localStorage.getItem('userId');
+            const token = localStorage.getItem('accessToken');
 
             const {nickname, phone} = this.userData;
             const userUpdateRequest = {
@@ -49,7 +49,7 @@ export default {
                 console.log('수정 성공: ', res.data);
                 alert('정보가 성공적으로 수정되었습니다.');
 
-                sessionStorage.setItem('userData', JSON.stringify(res.data));
+                localStorage.setItem('userData', JSON.stringify(res.data));
             }).catch((error) => {
                 console.error('수정 실패:', error.response || error.message);
                 alert('정보 수정에 실패했습니다. 다시 시도해주세요.');
