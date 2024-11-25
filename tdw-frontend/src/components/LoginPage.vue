@@ -17,7 +17,7 @@
   
 <script>
 import ViewHeader from './Header/ViewHeader.vue';
-import '@/assets/css/login.css';
+import '@/assets/css/Login.css';
 import '@/assets/css/common.css';
 import axios from 'axios';
 

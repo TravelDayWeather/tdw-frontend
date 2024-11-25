@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="image-container">
-            <img alt="Vue logo" src="../../assets/img/tdwLogo.png" @click="goToHome" class="logo-resize">
+            <img alt="Vue logo" src="../../assets/img/TdwLogo.png" @click="goToHome" class="logo-resize">
             <img alt="search icon" src="../../assets/img/searchIcon.png" @click="goToSearch" class="icon-resize search-icon-location icon-location">
             <img alt="mypage icon" src="../../assets/img/mypageIcon.png" @click="goToMyPage" class="icon-resize mypage-icon-location icon-location">
         </div>
