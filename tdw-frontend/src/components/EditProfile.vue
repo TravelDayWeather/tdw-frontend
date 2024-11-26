@@ -23,7 +23,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            userData: JSON.parse(sessionStorage.getItem('userData'))
+            userData: JSON.parse(localStorage.getItem('userData'))
         };
     },
     methods:{
